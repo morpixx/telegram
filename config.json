@@ -2,13 +2,14 @@
     "api_id": "27174235",
     "api_hash": "93682bb767f2240d31252b764b6bfe9a",
     "session": "my_session", 
-    "cycle_delay": 90,          
-    "chat_delay": 5,             
+    "cycle_delay": 150,          
+    "chat_delay": 10,             
     "source_posts": [
       "https://t.me/silent_spam/3"
     ],
     "target_chats": [
       -1001358826021,
+      -1001636967542,
       "@dizmoral_chat"
     ]
   }
