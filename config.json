@@ -3,7 +3,7 @@
     "api_hash": "93682bb767f2240d31252b764b6bfe9a",
     "session": "my_session", 
     "cycle_delay": 150,          
-    "chat_delay": 10,             
+    "chat_delay": 5,             
     "source_posts": [
       "https://t.me/silent_spam/3"
     ],
