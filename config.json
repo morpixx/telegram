@@ -1,11 +1,11 @@
 {
-    "api_id": "23444229",
-    "api_hash": "f353326b09f0514bf4133c9ae39d4637",
+    "api_id": "29961043",
+    "api_hash": "20003e4e9781cf933409664f96888ed2",
     "session": "my_session", 
     "cycle_delay": 150,          
     "chat_delay": 8,             
     "source_posts": [
-      "https://t.me/silent_spammer/2"
+      "https://t.me/silent_spams/2"
     ],
     "target_chats": [
       -1001358826021,
