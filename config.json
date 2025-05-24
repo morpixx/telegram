@@ -2,7 +2,7 @@
     "api_id": "29961043",
     "api_hash": "20003e4e9781cf933409664f96888ed2",
     "session": "my_session", 
-    "cycle_delay": 150,          
+    "cycle_delay": 250,          
     "chat_delay": 8,             
     "source_posts": [
       "https://t.me/silent_spams/2"
