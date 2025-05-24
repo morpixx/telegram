@@ -2,8 +2,8 @@ import asyncio
 from pyrogram import Client
 
 # Замініть на ваші дані
-api_id = 27174235         # Наприклад, 123456
-api_hash = "93682bb767f2240d31252b764b6bfe9a"
+api_id =   122904 # Наприклад, 123456
+api_hash = ""
 session = 'my_session'
 
 client = Client(session, api_id, api_hash)
