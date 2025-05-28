@@ -1,15 +1,20 @@
 {
     "api_id": "29961043",
     "api_hash": "20003e4e9781cf933409664f96888ed2",
-    "session": "my_session", 
-    "cycle_delay": 250,          
-    "chat_delay": 15,          
+    "session": "my_session",
+    "cycle_delay": 250,
+    "chat_delay": 5,
+    "post_delay": 5,
     "source_posts": [
-      "https://t.me/morpix_store/3"
+      "https://t.me/morpix_store/3",
+      "https://t.me/morpix_store/11",
+      "https://t.me/morpix_store/17",
+      "https://t.me/morpix_store/18"
+      
     ],
     "target_chats": [
       -1001358826021,
-      -1001844765942
+      -1002483765970
     ]
-  }
-  
+}
+

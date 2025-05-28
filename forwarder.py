@@ -9,6 +9,7 @@ async def forward_posts(client, config):
     """
     cycle_delay = config.get("cycle_delay", 3600)
     chat_delay = config.get("chat_delay", 5)
+    post_delay = config.get("post_delay", 10) # Читаємо нову затримку
     source_posts = config["source_posts"]
     target_chats = config["target_chats"]
 
@@ -35,7 +36,7 @@ async def forward_posts(client, config):
                 try:
                     # Отримання сутності цільового чату
                     target_chat = await client.get_chat(target)
-                    
+
                     # Спроба приєднатися до чату (якщо чат публічний, має username)
                     try:
                         if target_chat.username:
@@ -50,11 +51,16 @@ async def forward_posts(client, config):
                         from_chat_id=channel.id,     # Звідки пересилати
                         message_id=message_id        # ID повідомлення
                     )
-                    print(f"Пост {message_id} переслано до {target}")
+                    print(f"Пост {message_id} з {channel_username} переслано до {target}")
                 except Exception as e:
-                    print(f"Помилка при пересиланні поста {message_id} до {target}: {e}")
-                await asyncio.sleep(chat_delay)
-        print(f"Цикл завершено. Чекаємо {cycle_delay} секунд до наступного циклу...")
+                    print(f"Помилка при пересиланні поста {message_id} з {channel_username} до {target}: {e}")
+                await asyncio.sleep(chat_delay) # Затримка між пересиланням в різні чати для ОДНОГО поста
+
+            # Додаємо затримку ПІСЛЯ того, як пост переслано до ВСІХ цільових чатів
+            print(f"Завершено обробку поста {post_url}. Чекаємо {post_delay} секунд перед наступним постом...")
+            await asyncio.sleep(post_delay)
+
+        print(f"Цикл пересилання завершено для всіх постів. Чекаємо {cycle_delay} секунд до наступного циклу...")
         await asyncio.sleep(cycle_delay)
 
 async def main():
