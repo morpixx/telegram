@@ -4,17 +4,13 @@
     "session": "my_session",
     "cycle_delay": 250,
     "chat_delay": 5,
-    "post_delay": 5,
+    "post_delay": 1,
     "source_posts": [
-      "https://t.me/morpix_store/3",
-      "https://t.me/morpix_store/11",
-      "https://t.me/morpix_store/17",
-      "https://t.me/morpix_store/18"
+      "https://t.me/spammserqq/4"
       
     ],
     "target_chats": [
-      -1001358826021,
-      -1002483765970
+     -1001358826021
     ]
 }
 

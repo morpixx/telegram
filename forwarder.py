@@ -2,6 +2,7 @@ import asyncio
 import json
 import re
 from pyrogram import Client
+from pyrogram.errors import RPCError # Імпортуємо RPCError
 
 async def forward_posts(client, config):
     """
@@ -52,8 +53,12 @@ async def forward_posts(client, config):
                         message_id=message_id        # ID повідомлення
                     )
                     print(f"Пост {message_id} з {channel_username} переслано до {target}")
+                except RPCError as e:
+                    # Ловимо специфічні помилки API
+                    print(f"Помилка API при пересиланні поста {message_id} з {channel_username} до {target}: [{e.CODE}] {e.MESSAGE}")
                 except Exception as e:
-                    print(f"Помилка при пересиланні поста {message_id} з {channel_username} до {target}: {e}")
+                    # Ловимо інші можливі помилки
+                    print(f"Невідома помилка при пересиланні поста {message_id} з {channel_username} до {target}: {e}")
                 await asyncio.sleep(chat_delay) # Затримка між пересиланням в різні чати для ОДНОГО поста
 
             # Додаємо затримку ПІСЛЯ того, як пост переслано до ВСІХ цільових чатів
